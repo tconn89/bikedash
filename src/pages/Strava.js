@@ -3,11 +3,8 @@ import '@patternfly/react-core/dist/styles/base.css';
 import React from 'react';
 import {Typography} from '@rmwc/typography';
 
-import { Progress, Badge, Grid, GridItem} from '@patternfly/react-core'
-import { GoogleMap, withScriptjs ,withGoogleMap, Polyline  } from "react-google-maps"
-//import DrawingManager from 'react-google-maps/lib/components/drawing/DrawingManager';
+import { Badge, Grid, GridItem} from '@patternfly/react-core'
 import GEO from 'lib/geolocationAPI'
-import LineChart from '../components/LineChart'
 import Card from '../components/Card';
 
 
