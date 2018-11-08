@@ -5,3 +5,6 @@
     position: relative;
     top: 64px; /* Height of the top nav bar */
   }
+  .badge {
+    height: 25px;
+  }

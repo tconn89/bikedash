@@ -1,3 +1,4 @@
+import 'core-js';
 import './css/index.css';
 
 import * as serviceWorker from './serviceWorker';

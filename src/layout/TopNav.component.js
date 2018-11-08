@@ -11,7 +11,7 @@ import React from 'react';
 export default class TopNav extends React.Component {
     render() {
         return (
-            <TopAppBar>
+            <TopAppBar style={{background: 'green'}}>
                 <TopAppBarRow>
                     <TopAppBarSection>
                     <TopAppBarNavigationIcon
