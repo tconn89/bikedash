@@ -7,8 +7,8 @@ import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-if(process.env.GMAPS_KEY === undefined)
-    throw new Error('You forgot to add GMAPS_KEY to .env')
+if(process.env.REACT_APP_GMAPS_KEY === undefined)
+    throw new Error('You forgot to add REACT_APP_GMAPS_KEY to .env')
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

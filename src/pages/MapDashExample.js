@@ -63,7 +63,7 @@ export default class MapDash extends React.PureComponent {
                     <Badge> Sustainable </Badge>
                 </Grid>
                 <BikeMap 
-                    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GMAPS_KEY}&v=3.exp&libraries=geometry,drawing,places`}
+                    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GMAPS_KEY}&v=3.exp&libraries=geometry,drawing,places`}
                     loadingElement={ <div style={{ height: `100%` }} />}
                     containerElement={<div style={{ width: '600px',height: `400px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
