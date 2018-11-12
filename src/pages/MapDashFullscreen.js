@@ -31,7 +31,7 @@ const BikeMap =
                 fillOpactiy: 0,
                 strokeColor: '#0000FF',
                 strokeOpacity: 1.0,
-                strokeWeight: 2
+                strokeWeight: 6
             }}
         />
         : null }

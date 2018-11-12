@@ -30,7 +30,7 @@ export default class MapDash extends React.PureComponent {
                     { this.state.routes.map((route, k) =>
                         <GridCell key={k} span="3">
                             <a href={`/read/${route.id}`}>
-                                <RideCard title={route.name} subTitle={`Ride ${k}`}
+                                <RideCard title={route.name} hasThumb={route.hasThumb} id={route.id} subTitle={`Ride ${k}`}
                                 description={this.formatDate(route.coords[0].time)}/>
                             </a>
                         </GridCell>)}

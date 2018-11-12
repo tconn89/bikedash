@@ -6,8 +6,8 @@ import {Typography} from '@rmwc/typography';
 /*PropTypes
 * title: string
 * subTitle: string
-* image: string
 * description: string
+* hasThumb
 */
 export default class RideCard extends React.Component {
     render() {
@@ -17,7 +17,7 @@ export default class RideCard extends React.Component {
                 <CardPrimaryAction>
                     <CardMedia
                         sixteenByNine
-                        style={{backgroundImage: `url(${props.image?props.image:'https://via.placeholder.com/800x450'})`}}
+                        style={{backgroundImage: `url(img/${props.hasThumb?'thumbs/'+props.id.slice(1):'processing'}.png)`}}
                     />
                     <div style={{padding: '0 1rem 1rem 1rem'}}>
                         <Typography use="headline6" tag="h2">
@@ -41,3 +41,5 @@ export default class RideCard extends React.Component {
         );
     }
 }
+
+//props.image?props.image:'https://via.placeholder.com/800x450
