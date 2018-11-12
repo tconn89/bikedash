@@ -6,43 +6,51 @@ import bikeRoute from 'data/test'
 import GEO from 'lib/geolocationAPI'
 
 
-const BikeMap = 
- withScriptjs( withGoogleMap( props => {
+class BikeMapUnloaded extends React.Component {
 
-    const lineSymbol = {
+    lineSymbol = {
         path: window.google.maps.SymbolPath.FORWARD_CLOSED_ARROW
     };
+    componentDidMount(){
+        console.log(this)
+        console.log(this.map.context.__SECRET_MAP_DO_NOT_USE_OR_YOU_WILL_BE_FIRED)
+    }
     // let bounds = new window.google.maps.LatLngBounds()
     // props.route.forEach((location, i) => {
     //     bounds.extends(props)
     // })
     //this.map.fitBounds(bounds)
+    render() {
+    const props = this.props
     return (
-    <GoogleMap
-        defaultZoom={16}
-        defaultCenter={bikeRoute[0]}
-        ref={map => {props.setMap(map)}}
-    >
-    { props.loaded ?
-        <Polyline 
-            defaultEditable={false}
-            defaultVisible={true}
-            visible={true}
-            onDragStart={() => console.log('Drag start')}
-            path={props.route}
-            options={{
-                geodesic: true,
-                icons: [{icon: lineSymbol, offset: '0', repeat: '100px', strokeOpacity:'0' ,fillOpactiy:'0'}],
-                fillOpactiy: 0,
-                strokeColor: '#0000FF',
-                strokeOpacity: 1.0,
-                strokeWeight: 2
-            }}
-        />
-        : null }
-    </GoogleMap>
-    )}));
+        <GoogleMap
+            defaultZoom={16}
+            defaultCenter={bikeRoute[0]}
+            ref={map => {this.map = map}}
+        >
+        { props.loaded ?
+            <Polyline 
+                defaultEditable={false}
+                defaultVisible={true}
+                visible={true}
+                onDragStart={() => console.log('Drag start')}
+                path={props.route}
+                options={{
+                    geodesic: true,
+                    icons: [{icon: this.lineSymbol, offset: '0', repeat: '100px', strokeOpacity:'0' ,fillOpactiy:'0'}],
+                    fillOpactiy: 0,
+                    strokeColor: '#0000FF',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                }}
+            />
+            : null }
+        </GoogleMap>
+        )
+    }
+}
 
+const BikeMap = withScriptjs(withGoogleMap(BikeMapUnloaded))
 export default class MapDash extends React.PureComponent {
     state = {loaded: false, route: [] }
     async componentDidMount(){
