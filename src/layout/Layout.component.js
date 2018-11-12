@@ -39,7 +39,7 @@ export default class Layout extends React.Component {
         } = this;
 
         return (
-            <div>
+            <React.Fragment>
                 <TopNav onMenuIconClick={toggleDrawer} />
                 <div>
                     <NavDrawer
@@ -50,7 +50,7 @@ export default class Layout extends React.Component {
                         {children}
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
