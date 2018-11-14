@@ -73,14 +73,14 @@ export default class MapDash extends React.PureComponent {
                     </div>
                 </div>
                 <div style={{margin:'15px', fontFamily:'roboto'}} >
-                <Grid gutter='sm' sm={2} md={1} lg={1} >
-                    <Badge className='badge'> Green </Badge>
-                    <Badge className='badge'> Sustainable </Badge>
-                    { this.state.route.length ? <Badge className='badge'>  {this.dateDecorator(this.state.route[0].time)}  </Badge> : null}
+                <Grid xs={6} sm ={3} md={3} lg={2}>
+                    <GridItem ><Badge className='badge'> Green </Badge></GridItem>
+                    <GridItem ><Badge className='badge'> Sustainable </Badge></GridItem>
+                    { this.state.route.length ? <GridItem ><Badge className='badge'>  {this.dateDecorator(this.state.route[0].time)}  </Badge></GridItem> : null}
                 </Grid>
                 </div>
-                <Grid gutter='sm' sm={2} md={1} lg={1} xl={1} >
-                    <GridItem span={6}>
+                <Grid gutter='sm' xs={12} sm={12} md={6} lg={6} xl={6} >
+                    <GridItem >
                     { !this.state.loaded ? 
                     <Progress style={{width: '100%'}} size='lg' value={50}/> :
                     <Map 
@@ -90,7 +90,7 @@ export default class MapDash extends React.PureComponent {
                         mapElement={<div style={{ height: `100%` }} />}
                     /> }
                     </GridItem>
-                    <GridItem span={6}>
+                    <GridItem >
                     { !this.state.loaded ? 
                     <Progress style={{width: '100%'}} size='lg' value={50}/> :
                         <LineChart 
