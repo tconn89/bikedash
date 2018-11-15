@@ -20,12 +20,26 @@
   width: 100%; /* Added to counter flexbox settings in main.css */
   color: white;
 }
+.metric-data { font-size: 32px;}
+.text-uppercase { text-transform: uppercase;}
+span.badge { margin-right: 5px;}
+
+.icon-margin {
+  margin-right: 5px;
+}
+.d-flex {
+  display: flex;
+
+}
 
 a:visited {
   color: purple;
 }
 a, a:hover, a:visited, a:active {
   text-decoration: none !important;
+}
+.site.container {
+  width: 95%;
 }
 .main {
   margin-top: 20px;

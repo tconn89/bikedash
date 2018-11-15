@@ -8,6 +8,7 @@ import { GoogleMap, withScriptjs ,withGoogleMap, Polyline  } from "react-google-
 //import DrawingManager from 'react-google-maps/lib/components/drawing/DrawingManager';
 import GEO from 'lib/geolocationAPI'
 import LineChart from '../components/LineChart'
+import Metric from './Metric';
 
 const CONVERSION_TO_MPH = 2.23694;
 const BikeMap = (data) => 
@@ -54,7 +55,7 @@ export default class MapDash extends React.PureComponent {
         if(!type)
             return `${d.getMonth()+1}/${d.getDate()}/${d.getFullYear().toString().slice(-2)}`
         if(type === 1){
-            const afternoon = d.getHours() / 12 > 1 ? 'pm':'am'
+            const afternoon = d.getHours() / 12 >= 1 ? 'pm':'am'
             const min = d.getMinutes() < 10 ? `0${d.getMinutes()}` : d.getMinutes()
             return `${d.getHours()%12}:${min}${afternoon}`
         }
@@ -66,18 +67,39 @@ export default class MapDash extends React.PureComponent {
     render() {
         const Map = BikeMap(this.state.route)
         return (
-            <div className="">
+            <div className="site container">
                 <div style={{padding:'15px', }} >
                     <div style={{fontSize:'36px', fontFamily:'roboto'}}>
                         <p>{this.state.name}</p>
                     </div>
                 </div>
-                <div style={{margin:'15px', fontFamily:'roboto'}} >
-                <Grid xs={6} sm ={3} md={3} lg={2}>
-                    <GridItem ><Badge className='badge'> Green </Badge></GridItem>
-                    <GridItem ><Badge className='badge'> Sustainable </Badge></GridItem>
-                    { this.state.route.length ? <GridItem ><Badge className='badge'>  {this.dateDecorator(this.state.route[0].time)}  </Badge></GridItem> : null}
+                <Grid gutter='sm' sm={2} md={1} lg={1} xl={1} >
+                    <Metric
+                        name='Start'
+                        data={this.state.loaded ? this.dateDecorator(this.state.route[0].time, 1) : ''}
+                        >
+                    </Metric>
+                    <Metric
+                        name='Finish'
+                        data={this.state.loaded ? this.dateDecorator(this.state.route[this.state.route.length-1].time, 1) : ''}
+                        >
+                    </Metric>
+                    <Metric
+                        name='Data Points'
+                        data={this.state.loaded ? this.state.route.length : ''}
+                        >
+                    </Metric>
+                    <Metric
+                        name='Average Speed'
+                        data={(this.state.loaded ? this.avgSpeed() : '0 ') + 'mph'}
+                        >
+                    </Metric>
                 </Grid>
+                <div className='space' />
+                <div style={{margin:'15px', fontFamily:'roboto'}} >
+                    <Badge className='badge'> Green </Badge>
+                    <Badge className='badge'> Sustainable </Badge>
+                    { this.state.route.length ? <Badge className='badge'>  {this.dateDecorator(this.state.route[0].time)}  </Badge> : null}
                 </div>
                 <Grid gutter='sm' xs={12} sm={12} md={6} lg={6} xl={6} >
                     <GridItem >
@@ -103,34 +125,6 @@ export default class MapDash extends React.PureComponent {
                             }]}
                         />
                         }
-                    </GridItem>
-                </Grid>
-                <Grid gutter='sm' sm={2} md={1} lg={1} xl={1} >
-                    <GridItem span={1}>
-                    </GridItem>
-                    <GridItem span={5}>
-                        <div>
-                        <Typography use='caption'>
-                            Start: {this.state.loaded ? this.dateDecorator(this.state.route[0].time, 1) : ''}
-                        </Typography>
-                        </div>
-                        <div>
-                        <Typography use='caption'>
-                            Finish: {this.state.loaded ? this.dateDecorator(this.state.route[this.state.route.length-1].time, 1) : ''}
-                        </Typography>
-                        </div>
-                        <div>
-                        <Typography use='caption'>
-                            Data Points: {this.state.loaded ? this.state.route.length : ''}
-                        </Typography>
-                        </div>
-                    </GridItem>
-                    <GridItem span={5}>
-                        <div>
-                        <Typography use='caption'>
-                            Average Speed: {this.state.loaded ? this.avgSpeed() : '0 '} mph
-                        </Typography>
-                        </div>
                     </GridItem>
                 </Grid>
             </div>
