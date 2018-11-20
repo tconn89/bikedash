@@ -14,7 +14,7 @@ export const routes = [
     },
     {
         component: MapDash,
-        leftNav: true,
+        leftNav: false,
         name: 'MapDash',
         path: '/read/*',
     },
@@ -27,21 +27,9 @@ export const routes = [
     {
         component: Default,
         exact: true,
-        leftNav: true,
+        leftNav: false,
         name: 'Home',
         path: '/',
-    },
-    {
-        component: CardPage,
-        leftNav: true,
-        name: 'Cards',
-        path: '/cards',
-    },
-    {
-        component: Article,
-        leftNav: true,
-        name: 'Article',
-        path: '/article',
     },
     
 ];

@@ -21,8 +21,8 @@ export default class NavDrawer extends React.Component {
         return (
             <Drawer modal onClose={onClose} open={open}>
                 <DrawerHeader>
-                    <DrawerTitle>DrawerHeader</DrawerTitle>
-                    <DrawerSubtitle>Subtitle</DrawerSubtitle>
+                    <DrawerTitle>CoffeeLux</DrawerTitle>
+                    <DrawerSubtitle>Coffee Fueled Enlightenment</DrawerSubtitle>
                 </DrawerHeader>
                 <DrawerContent>
                     <List>

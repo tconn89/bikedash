@@ -22,8 +22,8 @@ export default class MapDash extends React.PureComponent {
     render() {
         return (
             <div className="main">
-                <Typography style={{fontFamily:'roboto'}} use="headline3">
-                    <p>History</p>
+                <Typography use="headline3">
+                    <p style={{marginLeft: '20px'}}>History</p>
                 </Typography>
 
                 <Grid >

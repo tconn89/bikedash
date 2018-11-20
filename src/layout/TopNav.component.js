@@ -13,7 +13,9 @@ const Logo = () => {
     return (
         <Grid >
             <GridCell phone={3} tablet={3} desktop={3} >
-                <img className='logo' src='/img/full_logo.png' alt='logo'/>
+                <div className='logo-container'>
+                    <img className='logo' src='/img/full_logo.png' alt='logo'/>
+                </div>
             </GridCell> 
         </Grid>
     );
@@ -21,7 +23,7 @@ const Logo = () => {
 export default class TopNav extends React.Component {
     render() {
         return (
-            <TopAppBar style={{background: 'white'}}>
+            <TopAppBar style={{background: 'rgba(0,0,0,0)'}}>
                 <TopAppBarRow>
                     <TopAppBarSection>
                     <TopAppBarNavigationIcon
