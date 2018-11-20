@@ -1,7 +1,6 @@
 import '../css/article.css';
 import '@patternfly/react-core/dist/styles/base.css';
 import React from 'react';
-import {Typography} from '@rmwc/typography';
 
 import { Progress, Badge, Grid, GridItem} from '@patternfly/react-core'
 import { GoogleMap, withScriptjs ,withGoogleMap, Polyline  } from "react-google-maps"

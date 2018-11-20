@@ -1,7 +1,15 @@
 /* Default (mostly) CSS that comes with create-react-app */
 
+body {
+  font-family: 'Roboto, comic-sans' !important;
+}
 .App {
   text-align: center;
+}
+.logo {
+  width: 100%;
+  margin-bottom: -10px;
+  margin-left: -30px;
 }
 
 .App-logo {

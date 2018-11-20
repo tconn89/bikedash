@@ -1,7 +1,6 @@
 import '@patternfly/react-core/dist/styles/base.css';
 import '@rmwc/icon/icon.css';
 import React from 'react';
-import {Typography} from '@rmwc/typography';
 import { Icon } from '@rmwc/icon'
 
 import { GridItem } from '@patternfly/react-core'
