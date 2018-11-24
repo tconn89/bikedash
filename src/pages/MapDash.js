@@ -43,25 +43,28 @@ export default class MapDash extends React.PureComponent {
         const path = window.location.pathname
         const key = path.substr(path.indexOf('-'), path.length)
         let data = await GEO.read(key)
-        const { name, coords } = data.result
-        this.setState({loaded: true, name, route: coords, samples: this.sampleSpeed(coords)})
+        const { name, coords, totalDistance } = data.result
+        this.setState({loaded: true, name, route: coords, totalDistance, samples: this.sampleSpeed(coords)})
     }
     sampleSpeed(arr){
         return arr.filter((coord, i) => i % 5 === 1 )
+    }
+    distanceDecorator(distance){
+        return distance.toFixed(2) + ' km'
     }
     dateDecorator(date, type){
         const d = new Date(date)
         if(!type)
             return `${d.getMonth()+1}/${d.getDate()}/${d.getFullYear().toString().slice(-2)}`
         if(type === 1){
-            const afternoon = d.getHours() / 12 >= 1 ? 'pm':'am'
+            const afternoon = d.getHours() / 12 >= 1 ? ' pm':' am'
             const min = d.getMinutes() < 10 ? `0${d.getMinutes()}` : d.getMinutes()
             return `${d.getHours()%12}:${min}${afternoon}`
         }
     }
     avgSpeed(){
         const avg = this.state.route.reduce((cum, add) => cum + (add.speed || 0),0) / this.state.route.length * CONVERSION_TO_MPH
-        return avg.toFixed(3)
+        return avg.toFixed(2)
     }
     render() {
         const Map = BikeMap(this.state.route)
@@ -76,23 +79,25 @@ export default class MapDash extends React.PureComponent {
                     <Metric
                         name='Start'
                         data={this.state.loaded ? this.dateDecorator(this.state.route[0].time, 1) : ''}
-                        >
-                    </Metric>
+                        />
                     <Metric
                         name='Finish'
                         data={this.state.loaded ? this.dateDecorator(this.state.route[this.state.route.length-1].time, 1) : ''}
-                        >
-                    </Metric>
+                        />
                     <Metric
                         name='Data Points'
                         data={this.state.loaded ? this.state.route.length : ''}
-                        >
-                    </Metric>
+                        />
+                    { this.state.loaded && this.state.totalDistance ? 
+                    <Metric
+                        name='Total Distance'
+                        data={this.distanceDecorator(this.state.totalDistance)}
+                    />
+                    : null}
                     <Metric
                         name='Average Speed'
-                        data={(this.state.loaded ? this.avgSpeed() : '0 ') + 'mph'}
-                        >
-                    </Metric>
+                        data={(this.state.loaded ? this.avgSpeed() : '0 ') + ' mph'}
+                        />
                 </Grid>
                 <div className='space' />
                 <div style={{margin:'15px', fontFamily:'roboto'}} >

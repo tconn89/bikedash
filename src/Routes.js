@@ -1,6 +1,4 @@
 import Default from './pages/Default';
-import CardPage from './pages/CardPage';
-import Article from './pages/Article';
 import MapDash from './pages/MapDash';
 import History from './pages/History';
 import MapDashFull from './pages/MapDashFullscreen'
