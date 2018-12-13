@@ -1,7 +1,7 @@
 /* Default (mostly) CSS that comes with create-react-app */
 
 body {
-  font-family: 'Roboto, comic-sans' !important;
+  font-family: Roboto, Arial !important;
   
 }
 .App {
@@ -15,6 +15,7 @@ body {
 }
 .logo {
   width: 100%;
+  max-width: 250px;
 }
 
 .App-logo {

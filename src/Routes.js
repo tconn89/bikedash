@@ -1,6 +1,7 @@
-import Default from './pages/Default';
+import Home from './pages/home';
 import MapDash from './pages/MapDash';
 import History from './pages/History';
+import Strava from './pages/Strava';
 import MapDashFull from './pages/MapDashFullscreen'
 
 export const routes = [
@@ -9,6 +10,12 @@ export const routes = [
         leftNav: true,
         name: 'History',
         path: '/history',
+    },
+    {
+        component: Strava,
+        leftNav: true,
+        name: 'Login',
+        path: '/login',
     },
     {
         component: MapDash,
@@ -23,7 +30,7 @@ export const routes = [
         path: '/fullscreen/*',
     },
     {
-        component: Default,
+        component: Home,
         exact: true,
         leftNav: false,
         name: 'Home',

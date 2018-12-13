@@ -4,39 +4,24 @@ import React from 'react';
 import {Typography} from '@rmwc/typography';
 
 import { Badge, Grid, GridItem} from '@patternfly/react-core'
-import GEO from 'lib/geolocationAPI'
 import Card from '../components/Card';
 
 
 
 export default class Strava extends React.PureComponent {
-    state = {loaded: false, route: [], name: 'Raleigh Bikers', samples: []}
     async componentDidMount(){
         console.log('API')
-        const path = window.location.pathname
-        const key = path.substr(path.indexOf('-'), path.length)
-        let data = await GEO.read(key)
-        console.log(data)
-        const { name, coords } = data.result
-        this.setState({loaded: true, name, route: coords, samples: this.sampleSpeed(coords)})
-    }
-    sampleSpeed(arr){
-        const t = arr.filter((coord, i) => i % 5 == 1 )
-        console.log('samples', t)
-        return t
     }
     render() {
-        console.log(this.state.route)
         return (
             <div className="">
                 <Typography use="headline4">
-                    <p>{this.state.name}</p>
+                    <p>Connect To Strava</p>
                 </Typography>
 
                 <Grid gutter='sm' sm={2} md={1} lg={1} >
                     <Badge className='badge'> Green </Badge>
                     <Badge className='badge'> Sustainable </Badge>
-                    <Badge className='badge'> 10/26/18 </Badge>
                 </Grid>
                 <Grid gutter='sm' sm={2} md={1} lg={1} xl={1} >
                     <GridItem span={6}>
