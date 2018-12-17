@@ -31,3 +31,10 @@ iframe {
   height: 100%;
   pointer-events: none;
 }
+
+a:active, a:visited, a:focus {
+  outline: none;
+}
+button:active, button:visited, button:focus {
+  outline: none;
+}

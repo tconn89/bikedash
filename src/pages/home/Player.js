@@ -8,7 +8,7 @@ let videoBackground = {
     top: 0, right: 0, bottom: 0, left: 0,
     zIndex: -5,
 };
-const videoForeground = {
+var videoForeground = {
     position: 'absolute',
     top: 0,
     left: 0,
@@ -20,21 +20,31 @@ const videoForeground = {
 
 export default class Player extends React.Component {
 
+  componentDidUpdate(){
+    console.log('Debug Update')
+  }
   componentDidMount(){
-    this.player = new YTPlayer('#player', {
+    var player = this.player = new YTPlayer('#player', {
       autoplay: true,
       controls: false,
       modestBranding: true,
       related: false,
     })
     console.log('Load player', this.props.id)
-    this.player.load(this.props.id)
-    this.player.setVolume(0)
-    this.player.setPlaybackRate(0.5)
-    this.player.play()
-    this.player.on('ended', this.props.onEnd)
-    this.player.on('error', () => console.log('Player Error'))
-    this.player.on('unplayable', () => console.log('Player Unplayable'))
+    const playerElem = document.getElementById('videoBG')
+    playerElem.hidden = true
+
+    player.load(this.props.id)
+    player.setVolume(0)
+    player.setPlaybackRate(0.5)
+    player.play()
+    player.on('ended', this.props.onEnd)
+    player.on('error', () => console.log('Player Error'))
+    player.on('unplayable', () => console.log('Player Unplayable'))
+    player.on('cued', () => console.log('Player Cued'))
+    player.on('unstarted', () => console.log('Player Starting'))
+    player.on('playing', () => {console.log('Player Active');playerElem.hidden = false;})
+
   }
   componentDidUnMount(){
     console.log('Player Unmounted')

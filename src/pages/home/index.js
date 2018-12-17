@@ -10,6 +10,10 @@ import VidManager from './VidManager'
 const videoHeight = () => window.innerWidth*9/16;
 
 export default class Home extends React.Component {
+  navToCoreValues(){
+    console.log('what')
+    window.location.href = '/core-values'
+  }
   render() {
     //const videoHeight = document.getElementById('videoBG').offsetHeight;
     return (
@@ -30,9 +34,9 @@ export default class Home extends React.Component {
             fontWeight: 'bold',
             fontSize: '36px',
             textAlign: 'center'}}>
-            Make a sustainable impact on the world</p>
+            Work together to make a sustainable impact on the world</p>
             <div style={{display: 'flex', justifyContent: 'center'}}>
-              <Button unelevated><strong>Learn More</strong></Button>
+              <Button onClick={this.navToCoreValues}unelevated><strong>Learn More</strong></Button>
             </div>
         </div>
         <div style={{

@@ -21,8 +21,10 @@ export default class NavDrawer extends React.Component {
         return (
             <Drawer modal onClose={onClose} open={open}>
                 <DrawerHeader>
-                    <DrawerTitle>CoffeeLux</DrawerTitle>
-                    <DrawerSubtitle>Coffee Fueled Enlightenment</DrawerSubtitle>
+                    <a href='/' >
+                        <DrawerTitle>CoffeeLux</DrawerTitle>
+                        <DrawerSubtitle>Coffee Fueled Enlightenment</DrawerSubtitle>
+                    </a>
                 </DrawerHeader>
                 <DrawerContent>
                     <List>
@@ -30,7 +32,7 @@ export default class NavDrawer extends React.Component {
                             routes
                                 .filter((route) => (route.leftNav))
                                 .map((route) => (
-                                    <ListItem key={route.path} tag={Link} to={route.path}>{route.name}</ListItem>
+                                    <ListItem key={route.path} onClick={onClose} tag={Link} to={route.path}>{route.name}</ListItem>
                                 ))
                         }
                     </List>

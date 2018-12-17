@@ -3,9 +3,16 @@ import Contact from './pages/contact';
 import MapDash from './pages/MapDash';
 import History from './pages/History';
 import Strava from './pages/Strava';
+import CoreValues from './pages/coreValues';
 import MapDashFull from './pages/MapDashFullscreen'
 
 export const routes = [
+    {
+        component: CoreValues,
+        leftNav: false,
+        name: 'Core Values',
+        path: '/core-values',
+    },
     {
         component: Contact,
         leftNav: false,

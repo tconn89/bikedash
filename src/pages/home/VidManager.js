@@ -16,6 +16,10 @@ export default class VidManager extends React.Component {
   onTrackEnd(){
     this.setState({ trackNumber: this.state.trackNumber+1 })
   }
+
+  componentDidUpdate(){
+    console.log('VidManager Update')
+  }
   render() {
     return (
       <React.Fragment>
