@@ -1,10 +1,17 @@
 import Home from './pages/home';
+import Contact from './pages/contact';
 import MapDash from './pages/MapDash';
 import History from './pages/History';
 import Strava from './pages/Strava';
 import MapDashFull from './pages/MapDashFullscreen'
 
 export const routes = [
+    {
+        component: Contact,
+        leftNav: false,
+        name: 'Contact',
+        path: '/contact-us',
+    },
     {
         component: History,
         leftNav: true,

@@ -1,0 +1,11 @@
+div .mdc-text-field__input {
+  background: white;
+}
+
+input.mdc-text-field__input {
+  padding-left: 12px !important;
+  padding-top: 6px !important;
+}
+div.no-border {
+  border: 0
+}
