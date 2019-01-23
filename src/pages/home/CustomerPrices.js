@@ -7,7 +7,7 @@ export default class CustomerPrices extends React.Component {
   high = { details: getPriceDetails('high')}
   priceHead(name, price){
     return (
-      <div class="pricing-head">
+      <div className="pricing-head">
         <h4>{name}</h4>
         <h1 style={{fontWeight: 'normal'}}>{price} BTC</h1>
         <h6>Per Month</h6>
@@ -16,13 +16,13 @@ export default class CustomerPrices extends React.Component {
   }
   render() {
     return (
-      <div id="pricing-section" class="gray-bg">
-        <div class="container">
-          <div class="row pricing-col">
-            <div class="col-sm-4 pricebox1">
-              <div class="pricing-box">
+      <div id="pricing-section" className="gray-bg">
+        <div className="container">
+          <div className="row pricing-col">
+            <div className="col-sm-4 col-4 pricebox1">
+              <div className="pricing-box">
                 {this.priceHead('Startup',2)}
-                <div class="pricing-body">
+                <div className="pricing-body">
                   <ul>
                     {this.low.details.map((detail,i) => <li key={i}>{detail}</li>)}
                   </ul>
@@ -31,10 +31,10 @@ export default class CustomerPrices extends React.Component {
                 </div>
               </div>
             </div>
-            <div class="col-sm-4 pricebox2">
-              <div class="pricing-box popular">
+            <div className="col-sm-4 col-4 pricebox2">
+              <div className="pricing-box popular">
                   {this.priceHead('Best Value', 5)}
-                <div class="pricing-body">
+                <div className="pricing-body">
                   <ul>
                     {this.medium.details.map((detail,i) => <li key={i}>{detail}</li>)}
                   </ul>
@@ -43,10 +43,10 @@ export default class CustomerPrices extends React.Component {
                 </div>
               </div>
             </div>
-            <div class="col-sm-4 pricebox3">
-              <div class="pricing-box">
+            <div className="col-sm-4 col-4 pricebox3">
+              <div className="pricing-box">
                   {this.priceHead('Enterprise', 10)}
-                <div class="pricing-body">
+                <div className="pricing-body">
                   <ul>
                     {this.high.details.map((detail,i) => <li key={i}>{detail}</li>)}
                   </ul>

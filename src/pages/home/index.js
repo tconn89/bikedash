@@ -22,20 +22,14 @@ export default class Home extends React.Component {
         <VidManager />
       
         { /* Transparency Overlay on top of Video Player */ }
-        <div style={{
-          position: 'absolute',
-          top: '200px',
-          left: '35%',
-          width: '30%',
-          
-          }} >
-          <p style={{
-            color: 'white',
-            fontWeight: 'bold',
-            fontSize: '36px',
-            textAlign: 'center'}}>
+        <div 
+          className='title-container'
+        >
+          <p 
+            className='company-statement'
+          >
             Work together to make a sustainable impact on the world</p>
-            <div style={{display: 'flex', justifyContent: 'center'}}>
+            <div className='action-button' style={{display: 'flex', justifyContent: 'center'}}>
               <Button onClick={this.navToCoreValues}unelevated><strong>Learn More</strong></Button>
             </div>
         </div>
