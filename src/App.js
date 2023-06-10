@@ -1,5 +1,5 @@
 import './css/App.css';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import {ThemeProvider} from '@rmwc/theme'
 
 import Layout from './layout/Layout.component';
@@ -23,11 +23,13 @@ class App extends React.Component {
                             rel="stylesheet"
                         />
                         <Layout>
+                            <Routes>
                             {
                                 routes.map((route, k) => (
                                     <Route key={k} exact={route.exact} path={route.path} component={route.component} />
                                 ))
                             }
+</Routes>
                         </Layout>
                     </div>
                 </ThemeProvider>

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Button } from '@rmwc/button'
-import 'css/responsiveMedia.css';
-import 'css/purchasePrice.css';
+import '../../css/responsiveMedia.css';
+import '../../css/purchasePrice.css';
 import CustomerPrices from './CustomerPrices'
 import Services from './Services'
-import VidManager from './VidManager'
 
 
 const videoHeight = () => window.innerWidth*9/16;
@@ -19,7 +18,6 @@ export default class Home extends React.Component {
     return (
       <div style={{position: 'relative', width: '100%'}}>
         <link rel="stylesheet" type="text/css" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css' />
-        <VidManager />
       
         { /* Transparency Overlay on top of Video Player */ }
         <div 

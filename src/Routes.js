@@ -1,10 +1,7 @@
 import Home from './pages/home';
 import Contact from './pages/contact';
-import MapDash from './pages/MapDash';
-import History from './pages/History';
 import Strava from './pages/Strava';
 import CoreValues from './pages/coreValues';
-import MapDashFull from './pages/MapDashFullscreen'
 
 export const routes = [
     {
@@ -20,28 +17,10 @@ export const routes = [
         path: '/contact-us',
     },
     {
-        component: History,
-        leftNav: true,
-        name: 'History',
-        path: '/history',
-    },
-    {
         component: Strava,
         leftNav: true,
         name: 'Login',
         path: '/login',
-    },
-    {
-        component: MapDash,
-        leftNav: false,
-        name: 'MapDash',
-        path: '/read/*',
-    },
-    {
-        component: MapDashFull,
-        leftNav: false,
-        name: 'MapDashFullScreen',
-        path: '/fullscreen/*',
     },
     {
         component: Home,
