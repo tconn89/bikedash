@@ -3,7 +3,7 @@ html {
   font-size: 16pt;
 }
 
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family:  "Roboto", "Oxygen",
@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url('../assets/img/cracked-cement-flip.jpg') !important; 
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

@@ -5,25 +5,25 @@ import CoreValues from './pages/coreValues';
 
 export const routes = [
     {
-        component: CoreValues,
+        component: <CoreValues />,
         leftNav: false,
         name: 'Core Values',
         path: '/core-values',
     },
     {
-        component: Contact,
+        component: <Contact />,
         leftNav: false,
         name: 'Contact',
         path: '/contact-us',
     },
     {
-        component: Strava,
+        component: <Strava />,
         leftNav: true,
         name: 'Login',
         path: '/login',
     },
     {
-        component: Home,
+        component: <Home />,
         exact: true,
         leftNav: false,
         name: 'Home',
