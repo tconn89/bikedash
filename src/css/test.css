@@ -9,7 +9,7 @@
 
 .circle-row {
   position: absolute;
-  bottom: -100px;
+  bottom: -10vw;
   left: 0;
   right: 0;
   display: flex;
@@ -26,7 +26,7 @@
   width: 200px; /* Adjust the circle size as per your requirements */
   height: 200px; /* Adjust the circle size as per your requirements */
   border-radius: 50%;
-  border: 10px solid #ededed;
+  border: 1.5vw solid #ededed;
   position: relative;
 }
 .grey {
@@ -57,7 +57,7 @@
   ); /* Adjust the overlay color and opacity as needed */
   border-radius: 50%;
   color: white;
-  font-size: 28px;
+  font-size: 2.6vw;
   font-weight: bold;
   /* opacity: 0; /* Initially set the opacity to 0, it will be animated on hover */
   /* transition: opacity 0.3s ease; */
