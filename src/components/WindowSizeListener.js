@@ -30,4 +30,7 @@ export const WindowSizeListener = ({ children }) => {
   );
 };
 
-export const useWindowSize = () => useContext(WindowSizeContext);
+export const useWindowSize = () => {
+  const windowSize = useContext(WindowSizeContext);
+  return windowSize;
+};

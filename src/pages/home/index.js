@@ -1,19 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Button } from "@rmwc/button";
 import CustomerPrices from "./CustomerPrices";
 import Services from "./Services";
 import { CircleImageButton } from "./CircleImageButton";
-import "../../css/test.css";
-import {
-  useWindowSize,
-  WindowSizeContext,
-} from "../../components/WindowSizeListener";
+import "css/test.css";
+import { useWindowSize } from "components/WindowSizeListener";
 
 export const Home = () => {
   const navToCoreValues = () => {
     window.location.href = "/core-values";
   };
-  const windowSize = useContext(WindowSizeContext);
+  const windowSize = useWindowSize();
   const videoHeight = () => (windowSize.width * 3) / 4;
   const isMobile = windowSize.width < 700;
   const cropImageHeight = isMobile ? videoHeight() : 0.8 * videoHeight();
@@ -41,7 +38,7 @@ export const Home = () => {
           <CircleImageButton singleLineText={false} text="Deck Builds" />
           <CircleImageButton singleLineText={true} text="Permits" />
           {!isMobile ? (
-            <CircleImageButton singleLineText={true} text="Demolition" />
+            <CircleImageButton singleLineText={true} text="Remodels" />
           ) : null}
         </div>
       </div>

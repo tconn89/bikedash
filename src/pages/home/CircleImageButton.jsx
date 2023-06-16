@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { WindowSizeContext } from "../../components/WindowSizeListener";
+import React from "react";
+import { useWindowSize } from "../../components/WindowSizeListener";
 
 export const CircleImageButton = ({ text, textSingleLine }) => {
   const parsedText = textSingleLine ? [text] : text.split(" ");
@@ -11,11 +11,11 @@ export const CircleImageButton = ({ text, textSingleLine }) => {
       {parsedText[1]}
     </span>
   );
-  const windowSize = useContext(WindowSizeContext);
+  const windowSize = useWindowSize();
   const diameter = windowSize.width / 6;
   return (
     <a href="/core-values">
-      <div className="circle" style={{ width: diameter, height: diameter }} j>
+      <div className="circle" style={{ width: diameter, height: diameter }}>
         <img src="img/deck-repair2.jpg" alt="Circle Image 1" />
         <div className="overlay">
           {textSingleLine ? <SingleLineButtonText /> : <DoubleLineButtonText />}

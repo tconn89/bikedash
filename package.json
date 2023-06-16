@@ -14,7 +14,7 @@
     "react-router-dom": "^6.12.1",
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
-    "rmwc": "^3.0.4",
+    "rmwc": "^7.0.2",
     "unstated": "^2.1.1"
   },
   "scripts": {

@@ -2,20 +2,49 @@
 
 body {
   font-family: Roboto, Arial !important;
- background-color: #ededed; 
+  background-color: #ededed;
 }
 .App {
   text-align: center;
 }
-.logo-container {
+.logo-row {
   width: 100%;
-  height: 64px;
-  margin-left: -30px;
-  margin-bottom: -20px;
+}
+.logo-overflow {
+  overflow-y: hidden;
+  overflow-x: visible;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 198px;
+  height: auto;
+}
+@media screen and (max-width: 1600px) {
+  .logo-container {
+    width: 176px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .logo-container {
+    width: 148px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .logo-container {
+    width: 124px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .logo-container {
+    width: 108px;
+  }
 }
 .logo {
   width: 100%;
-  max-width: 250px;
 }
 
 .App-logo {
@@ -34,22 +63,30 @@ body {
   width: 100%; /* Added to counter flexbox settings in main.css */
   color: white;
 }
-.metric-data { font-size: 32px;}
-.text-uppercase { text-transform: uppercase;}
-span.badge { margin-right: 5px;}
+.metric-data {
+  font-size: 32px;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+span.badge {
+  margin-right: 5px;
+}
 
 .icon-margin {
   margin-right: 5px;
 }
 .d-flex {
   display: flex;
-
 }
 
 a:visited {
   color: purple;
 }
-a, a:hover, a:visited, a:active {
+a,
+a:hover,
+a:visited,
+a:active {
   text-decoration: none !important;
 }
 .site.container {

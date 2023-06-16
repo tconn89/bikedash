@@ -30,7 +30,7 @@ const Cell = (props) => (
 function Service(props) {
   return (
     <Cell>
-      <div style={{ marginLeft: "30%", width: "40%" }}>
+      <div style={{ marginLeft: "20%", width: "60%" }}>
         <img
           style={{
             width: props.data.title.toLowerCase() === "mobile" ? "88%" : "100%",
@@ -50,24 +50,23 @@ function Service(props) {
 function Content(type) {
   if (type === "development")
     return {
-      title: "Development",
-      image: "/img/development_tall.png",
-      detail:
-        "We figured out the magic sauce to automate your business.  Our experience and expertise says it all.",
+      title: "Custom Builds",
+      image: "/img/blueprint.png",
+      detail: "Decking built to the dimensions you require.",
     };
   if (type === "mobile")
     return {
-      title: "Mobile",
-      image: "/img/wirephone.png",
+      title: "Extensions and Improvements",
+      image: "/img/board-repair.png",
       detail:
-        "Mobile apps our the name of the game.  Target your mobile users with a custom mobile app.",
+        "Assess and replace damaged lumber.  Lengthen and create more deck space for your enjoyment.",
     };
   if (type === "geo")
     return {
-      title: "Geolocation",
-      image: "/img/geo1.svg",
+      title: "High-quality and durable materials",
+      image: "/img/lumber.png",
       detail:
-        "Let us help track your vehicles.  Great for fleet management, racing and ridesharing apps.",
+        "All beams, joists, and posts constructed from the best white oak, cedar and redwood in the land!",
     };
   return {};
 }

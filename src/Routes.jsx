@@ -6,7 +6,7 @@ import CoreValues from "./pages/coreValues";
 export const routes = [
   {
     component: <CoreValues />,
-    leftNav: false,
+    leftNav: true,
     name: "Core Values",
     path: "/core-values",
   },
@@ -18,7 +18,7 @@ export const routes = [
   },
   {
     component: <Strava />,
-    leftNav: true,
+    leftNav: false,
     name: "Login",
     path: "/login",
   },

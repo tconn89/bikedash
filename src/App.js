@@ -13,7 +13,7 @@ class App extends React.Component {
       <BrowserRouter>
         <ThemeProvider
           options={{
-            primary: "#cd853f",
+            primary: "#53b2ea",
             secondary: "#179d46",
             onPrimary: "#fff",
           }}
