@@ -6,6 +6,7 @@ import Layout from "./layout/Layout.component";
 import React from "react";
 import { routes } from "./Routes";
 import { WindowSizeListener } from "./components/WindowSizeListener";
+import { NotFound } from "components/NotFound";
 
 class App extends React.Component {
   render() {
@@ -34,6 +35,7 @@ class App extends React.Component {
                       element={route.component}
                     />
                   ))}
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </Layout>
             </WindowSizeListener>

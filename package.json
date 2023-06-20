@@ -1,7 +1,9 @@
 {
   "name": "react-right-meow",
+  "homepage": "https://pegasusdecks.com",
   "version": "0.1.1",
   "private": false,
+  "license": "UNLICENSED",
   "dependencies": {
     "@patternfly/react-core": "^1.25.6",
     "axios": "^0.18.0",

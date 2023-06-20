@@ -2,6 +2,7 @@ import { Home } from "./pages/home";
 import Contact from "./pages/contact";
 import Strava from "./pages/Strava";
 import CoreValues from "./pages/coreValues";
+import { NotFound } from "components/NotFound";
 
 export const routes = [
   {
