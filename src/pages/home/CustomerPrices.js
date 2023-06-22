@@ -1,21 +1,11 @@
 import React from "react";
-import { Button } from "rmwc";
+import { Button } from "@rmwc/button";
 import { useNavigate } from "react-router-dom";
 
 export const CustomerPrices = () => {
   const low = { details: getPriceDetails("low") };
   const medium = { details: getPriceDetails("medium") };
   const high = { details: getPriceDetails("high") };
-
-  function priceHead(name, price) {
-    return (
-      <div className="pricing-head">
-        <h4>{name}</h4>
-        <h1 style={{ fontWeight: "normal" }}>${toCash(price)}+</h1>
-        <div className="spacer" />
-      </div>
-    );
-  }
 
   const navigate = useNavigate();
   const navToContact = () => navigate.push("/contact-us");
@@ -93,4 +83,13 @@ function getPriceDetails(prices) {
 
 function toCash(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function priceHead(name, price) {
+  return (
+    <div className="pricing-head">
+      <h4>{name}</h4>
+      <h1 style={{ fontWeight: "normal" }}>${toCash(price)}+</h1>
+      <div className="spacer" />
+    </div>
+  );
 }
