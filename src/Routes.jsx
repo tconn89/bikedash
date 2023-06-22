@@ -1,8 +1,7 @@
 import { Home } from "./pages/home";
-import Contact from "./pages/contact";
 import Strava from "./pages/Strava";
 import CoreValues from "./pages/coreValues";
-import { NotFound } from "components/NotFound";
+import { ContactTemporary } from "pages/contactTemporary";
 
 export const routes = [
   {
@@ -10,12 +9,6 @@ export const routes = [
     leftNav: true,
     name: "Core Values",
     path: "/core-values",
-  },
-  {
-    component: <Contact />,
-    leftNav: false,
-    name: "Contact",
-    path: "/contact-us",
   },
   {
     component: <Strava />,
@@ -29,5 +22,12 @@ export const routes = [
     leftNav: false,
     name: "Home",
     path: "/",
+  },
+  {
+    component: <ContactTemporary />,
+    exact: true,
+    leftNav: true,
+    name: "Contact Us",
+    path: "/contact-us",
   },
 ];

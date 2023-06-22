@@ -40,6 +40,8 @@ function Service(props) {
         />
       </div>
       <div className="spacer" />
+      <div className="spacer" />
+      <div className="spacer" />
       <div style={{ fontWeight: "bold" }}> {props.data.title} </div>
       <div className="spacer" />
       <div style={{ marginLeft: "10%", width: "80%" }}>{props.data.detail}</div>

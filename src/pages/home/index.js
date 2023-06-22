@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@rmwc/button";
-import CustomerPrices from "./CustomerPrices";
+import { CustomerPrices } from "./CustomerPrices";
 import Services from "./Services";
 import { CircleImageButton } from "./CircleImageButton";
 import "css/test.css";
