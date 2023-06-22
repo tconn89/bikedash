@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@rmwc/button";
 import { useNavigate } from "react-router-dom";
+import "css/customerPrice.css";
 
 export const CustomerPrices = () => {
   const low = { details: getPriceDetails("low") };
@@ -8,12 +9,12 @@ export const CustomerPrices = () => {
   const high = { details: getPriceDetails("high") };
 
   const navigate = useNavigate();
-  const navToContact = () => navigate.push("/contact-us");
+  const navToContact = () => navigate("/contact-us");
   return (
     <div id="pricing-section" className="gray-bg">
-      <div className="container">
+      <div className="container pricing">
         <div className="row pricing-col">
-          <div className="col-sm-4 col-4 pricebox1">
+          <div className="col-lg-4 col-md-4 col-sm-6 col-12 pricebox1">
             <div className="pricing-box">
               {priceHead("Ground-level Deck", 4200)}
               <div className="pricing-body">
@@ -29,7 +30,7 @@ export const CustomerPrices = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-4 col-4 pricebox2">
+          <div className="col-lg-4 col-md-4 col-sm-6 col-12 pricebox2">
             <div className="pricing-box popular">
               {priceHead("Screened-In Deck", 12000)}
               <div className="pricing-body">
@@ -45,7 +46,7 @@ export const CustomerPrices = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-4 col-4 pricebox3">
+          <div className="col-lg-4 col-md-4 col-sm-6 col-12 pricebox3">
             <div className="pricing-box">
               {priceHead("Upper-Level Deck", 25000)}
               <div className="pricing-body">
@@ -71,13 +72,23 @@ function getPriceDetails(prices) {
   if (prices === "low")
     return [
       "Starting at standard 12'x8' sizes",
-      "Attached to house",
       "Offering discounts for detached stand-alone decks",
+      "Flashings, beams, posts, joists, and more!",
     ];
   if (prices === "medium")
-    return ["Option to add electric", "Enjoy additional rain-free space"];
+    return [
+      "Enjoy additional rain-free space",
+      "Enhanced Privacy and Comfort",
+      "Option to add electric",
+      "Insect Protection",
+    ];
   if (prices === "high")
-    return ["Strong Redwood Staircase", "Long last foundation", ""];
+    return [
+      "Strong Redwood Staircase",
+      "Long last foundation",
+      "Durable 6x6 posts",
+      "Anchored Concrete Frost Piers",
+    ];
   return [];
 }
 
@@ -88,7 +99,10 @@ function priceHead(name, price) {
   return (
     <div className="pricing-head">
       <h4>{name}</h4>
-      <h1 style={{ fontWeight: "normal" }}>${toCash(price)}+</h1>
+      <h1 style={{ fontWeight: "normal" }}>
+        ${toCash(price)}
+        <span className="plus">+</span>
+      </h1>
       <div className="spacer" />
     </div>
   );

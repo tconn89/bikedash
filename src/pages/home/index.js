@@ -1,5 +1,4 @@
-import React from "react";
-import { Button } from "@rmwc/button";
+import React, { useMemo } from "react";
 import { CustomerPrices } from "./CustomerPrices";
 import Services from "./Services";
 import { CircleImageButton } from "./CircleImageButton";
@@ -7,13 +6,15 @@ import "css/test.css";
 import { useWindowSize } from "components/WindowSizeListener";
 
 export const Home = () => {
-  const navToCoreValues = () => {
-    window.location.href = "/core-values";
-  };
   const windowSize = useWindowSize();
-  const videoHeight = () => (windowSize.width * 3) / 4;
+  const imageHeight = useMemo(() => (windowSize.width * 3) / 4, [windowSize]);
   const isMobile = windowSize.width < 700;
-  const cropImageHeight = isMobile ? videoHeight() : 0.8 * videoHeight();
+  const crop = () => {
+    if (isMobile) return imageHeight;
+    if (imageHeight > 600) return 600;
+    return 0.8 * imageHeight;
+  };
+  const cropImageHeight = crop();
 
   return (
     <div style={{ width: "100%" }}>
@@ -29,9 +30,31 @@ export const Home = () => {
             style={{
               background: "url(/img/ty-paints.jpg)",
               backgroundSize: "100% 100%",
-              height: videoHeight(),
+              height: imageHeight,
             }}
           />
+        </div>
+        <div
+          className="overlay-grace"
+          style={{
+            position: "absolute",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "rgba(0, 0, 0, 0.55)",
+            borderRadius: "50%",
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: "Luminari",
+              textAlign: "center",
+              color: "#53b2ea",
+            }}
+          >
+            <div>Give grace to </div>
+            <div>your backyard</div>
+          </h2>
         </div>
         <div className="circle-row">
           <CircleImageButton singleLineText={false} text="Deck Repair" />
@@ -63,20 +86,6 @@ export const Home = () => {
       <div className="spacer" />
       <div className="spacer" />
       <div className="spacer" />
-
-      <div className="title-container">
-        <p className="company-statement">
-          Work together to make a sustainable impact on the world
-        </p>
-        <div
-          className="action-button"
-          style={{ display: "flex", justifyContent: "center" }}
-        >
-          <Button onClick={navToCoreValues} unelevated>
-            <strong>Learn More</strong>
-          </Button>
-        </div>
-      </div>
     </div>
   );
 };

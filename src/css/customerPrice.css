@@ -1,0 +1,29 @@
+.pricing-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  margin-bottom: 20px;
+}
+.plus {
+  font-size: 28px;
+}
+.pricing-body {
+  font-size: 16px;
+}
+.pricing-body li {
+  list-style-type: disc;
+}
+@media screen and (max-width: 992px) {
+  .pricing-col > div {
+    display: flex;
+    justify-content: center;
+  }
+  .pricing-box {
+    padding: 20px;
+  }
+  .pricing-body {
+    max-width: 202px;
+    font-size: 14px;
+  }
+}

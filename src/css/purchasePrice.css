@@ -23,7 +23,10 @@
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.50);
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: space-between;
 }
 
 .pricing-box .pricing-head {
@@ -83,9 +86,9 @@
 .row.pricing-col {
   align-items: center;
   justify-content: center;
-      max-width: 800px;
-width: 100%;
-margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .pricing-body ul li {
@@ -93,74 +96,74 @@ margin: 0 auto;
 }
 
 .pricing-body a {
-position: relative;
-text-align: center;
-display: block;
-background: #179d46 ;
-padding: 10px;
-color: #fff;
-z-index: 2;
-font-weight: bold;
-margin: 0 auto 20px;
-text-transform: uppercase;
-width: 70px;
-text-align: center;
-font-size: 12px;
-border-radius: 50%;
-height: 70px;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 0 20px 1px rgba(0,0,0,0.5);
+  position: relative;
+  text-align: center;
+  display: block;
+  background: #179d46;
+  padding: 10px;
+  color: #fff;
+  z-index: 2;
+  font-weight: bold;
+  margin: 0 auto 20px;
+  text-transform: uppercase;
+  width: 70px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 50%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
 }
 
 a:hover {
   text-decoration: none;
 }
 .pricing-body a:before {
-position:  absolute;
-left: -30px;
-width: 10px;
-height: 10px;
-background:  #179d46;
-content:  " ";
-border-radius:  50%;
-opacity: 0.7;
+  position: absolute;
+  left: -30px;
+  width: 10px;
+  height: 10px;
+  background: #179d46;
+  content: " ";
+  border-radius: 50%;
+  opacity: 0.7;
 }
 
 .pricing-body a:after {
-opacity: 0.7;
-position:  absolute;
-right: -30px;
-width: 10px;
-height: 10px;
-background:  #179d46;
-content:  " ";
-border-radius:  50%;
+  opacity: 0.7;
+  position: absolute;
+  right: -30px;
+  width: 10px;
+  height: 10px;
+  background: #179d46;
+  content: " ";
+  border-radius: 50%;
 }
 .pricing-body a:last-child {
-position:  relative;
-margin-top: -90px;
-z-index: 1;
+  position: relative;
+  margin-top: -90px;
+  z-index: 1;
 }
 .pricing-body a:last-child:before {
-position:  absolute;
-left: -55px;
-width: 7px;
-height: 7px;
-background:  #000;
-content:  " ";
-border-radius:  50%;
-opacity: 0.3;
+  position: absolute;
+  left: -55px;
+  width: 7px;
+  height: 7px;
+  background: #000;
+  content: " ";
+  border-radius: 50%;
+  opacity: 0.3;
 }
 
 .pricing-body a:last-child:after {
-opacity: 0.3;
-position:  absolute;
-right: -55px;
-width: 7px;
-height: 7px;
-background:  #000;
-content:  " ";
-border-radius:  50%;
+  opacity: 0.3;
+  position: absolute;
+  right: -55px;
+  width: 7px;
+  height: 7px;
+  background: #000;
+  content: " ";
+  border-radius: 50%;
 }

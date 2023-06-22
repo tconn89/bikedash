@@ -62,3 +62,22 @@
   /* opacity: 0; /* Initially set the opacity to 0, it will be animated on hover */
   /* transition: opacity 0.3s ease; */
 }
+
+.overlay-grace {
+  width: 320px;
+  height: 200px;
+  top: 100px;
+  left: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .overlay-grace {
+    width: 192px;
+    height: 120px;
+    top: 30px;
+    left: 30px;
+  }
+  .overlay-grace h2 {
+    font-size: 20px;
+  }
+}
