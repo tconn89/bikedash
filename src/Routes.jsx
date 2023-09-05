@@ -2,6 +2,7 @@ import { Home } from "./pages/home";
 import Strava from "./pages/Strava";
 import CoreValues from "./pages/coreValues";
 import { ContactTemporary } from "pages/contactTemporary";
+import { AluminumDeckRail } from "pages/projects/AluminumDeckRail";
 
 export const routes = [
   {
@@ -29,5 +30,10 @@ export const routes = [
     leftNav: true,
     name: "Contact Us",
     path: "/contact-us",
+  },
+  {
+    component: <AluminumDeckRail />,
+    leftNav: false,
+    path: "/decking-project-3",
   },
 ];
