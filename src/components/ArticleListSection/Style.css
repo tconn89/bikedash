@@ -1,0 +1,52 @@
+/* CSS for ImageCentricSection Component */
+
+.outer-container {
+  background: rgb(238, 238, 238);
+}
+
+.image-centric-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+  padding: 20px; /* Adjust the padding as needed */
+}
+
+.image-centric-section h2 {
+  font-weight: bold;
+}
+.article-container {
+  flex-basis: calc(
+    50% - 10px
+  ); /* To create two columns with margin in between */
+  margin-bottom: 20px;
+  background-color: #fff; /* White background color */
+  transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.article-container:hover {
+  transform: translateY(-5px); /* Move the container up slightly on hover */
+}
+
+.article-link {
+  text-decoration: none;
+  color: #333; /* Text color for article title */
+  display: block;
+  padding: 10px;
+}
+
+.article-image {
+  max-width: 100%;
+  height: 413px;
+  display: block;
+}
+
+.article-title {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.article-link:hover {
+  color: #53b2ea; /* Text color on hover */
+}

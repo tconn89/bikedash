@@ -4,6 +4,10 @@ import Services from "./Services";
 import { CircleImageButton } from "./CircleImageButton";
 import "css/test.css";
 import { useWindowSize } from "components/WindowSizeListener";
+import { ArticleListSection } from "components/ArticleListSection/ArticleListSection";
+import TrexFinished from "assets/img/project3/trex-finishing-touches.jpg";
+import Image404 from "assets/img/tools-not-found.png";
+import { LegalFooter } from "components/LegalFooter/LegalFooter";
 
 export const Home = () => {
   const windowSize = useWindowSize();
@@ -15,6 +19,19 @@ export const Home = () => {
     return 0.8 * imageHeight;
   };
   const cropImageHeight = crop();
+
+  const articles = [
+    {
+      title: "Maiden Deck Railing Build",
+      imageSrc: TrexFinished,
+      link: "/decking-project-3",
+    },
+    {
+      title: "More Coming Soon",
+      imageSrc: Image404,
+      link: "/",
+    },
+  ];
 
   return (
     <div style={{ width: "100%" }}>
@@ -77,19 +94,50 @@ export const Home = () => {
       <Spacer />
       <Spacer />
       <Spacer />
+
       <Services />
 
-      <div className="spacer" />
-      <div className="spacer" />
-      <div className="spacer" />
+      <WhiteSpacer />
+      <WhiteSpacer />
+      <WhiteSpacer />
+
       <CustomerPrices />
-      <div className="spacer" />
-      <div className="spacer" />
-      <div className="spacer" />
+
+      <WhiteSpacer />
+      <WhiteSpacer />
+      <WhiteSpacer />
+
+      <ArticleListSection articles={articles} />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <Spacer />
+      <LegalFooter />
     </div>
   );
 };
 
 function Spacer() {
   return <div className="spacer grey" />;
+}
+function WhiteSpacer() {
+  return <div className="spacer" />;
 }
