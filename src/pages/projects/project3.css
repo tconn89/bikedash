@@ -50,12 +50,13 @@
 .project-page .project-details ul {
   list-style-type: none;
   padding: 0;
+  text-align: left;
 }
 
 /* Styles for individual project details items */
 .project-page .project-details li {
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  margin-bottom: 12px;
 }
 
 /* Styles for the more information section */
@@ -79,7 +80,7 @@
 /* Styles for the image overlays */
 .project-page .project-images .image-overlay {
   position: absolute;
-  top: 15%;
+  top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.6);
@@ -114,12 +115,10 @@
 
 /* Styles for the project details */
 .project-details {
-  flex-basis: calc(50% - 20px); /* 50% width with 20px spacing in between */
-  padding: 20px;
+  flex-basis: 50%;
   background-color: #f9f9f9; /* Light gray background */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  margin-bottom: 20px;
+  padding: 30px;
 }
 
 .project-details h2 {
@@ -139,7 +138,7 @@
 
 /* Styles for the project detail image */
 .project-detail-image {
-  flex-basis: calc(50% - 20px); /* 50% width with 20px spacing in between */
+  flex-basis: 50%;
 }
 
 .project-detail-image img {
