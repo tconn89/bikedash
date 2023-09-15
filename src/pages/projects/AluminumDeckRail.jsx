@@ -17,7 +17,7 @@ export const AluminumDeckRail = () => {
   return (
     <Project
       projectName="Deck Railing Replacement"
-      projectDesc="Black Aluminum against White"
+      projectDesc="Black Aluminum against White - Completed in One Week"
       images={[ImageBefore, Image2, ImageAfter]}
       bulletPoints={[
         'Painting the 2"x4"s white to match the siding of the house was the first step to create this beautiful railing.  Painting lumber requires that the wood be dried first.  If you do not want to wait 6-months to dry, kiln-dried lumber is a great but expensive option.',
