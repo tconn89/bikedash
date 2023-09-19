@@ -1,4 +1,5 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap"; // Import Bootstrap grid components
 import ArticleFooter from "./ArticleFooter/ArticleFooter";
 
 const OverlayArray = ["Before", "During", "After"];
@@ -16,24 +17,36 @@ export function Project(props) {
         </header>
         <div className="spacer" />
         <section className="project-images">
-          {images.map((image, index) => (
-            <div className="image-wrapper" key={index}>
-              <img src={image} alt={`Project Image ${index}`} />
-              <div className="image-overlay">{OverlayArray[index]}</div>
-            </div>
-          ))}
+          {/* Use Bootstrap grid classes to create a responsive grid */}
+          <Row>
+            {images.map((image, index) => (
+              <Col key={index} lg={4} md={4} sm={6} xs={12}>
+                <div className="image-wrapper">
+                  <img src={image} alt={`Project Image ${index}`} />
+                  <div className="image-overlay">{OverlayArray[index]}</div>
+                </div>
+              </Col>
+            ))}
+          </Row>
         </section>
         <section className="project-container">
-          <div className="project-details">
-            <ul>
-              {bulletPoints.map((bullet, index) => (
-                <li key={index}>{bullet}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="project-detail-image">
-            <img src={detailImage} alt={`Project Detail Image`} />
-          </div>
+          {/* Use Bootstrap grid classes to create a two-column layout */}
+          <Row>
+            <Col lg={6} md={6} sm={12}>
+              <div className="project-details">
+                <ul>
+                  {bulletPoints.map((bullet, index) => (
+                    <li key={index}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            </Col>
+            <Col lg={6} md={6} sm={12}>
+              <div className="project-detail-image">
+                <img src={detailImage} alt={`Project Detail Image`} />
+              </div>
+            </Col>
+          </Row>
         </section>
         {more && (
           <>
@@ -42,16 +55,23 @@ export function Project(props) {
               <p>{more.detail1}</p>
             </section>
             <section className="project-container">
-              <div className="project-detail-image">
-                <img src={more.detailImage1} alt={`Project Detail Image`} />
-              </div>
-              <div className="project-details">
-                <ul>
-                  {more.bulletPoints1?.map((bullet, index) => (
-                    <li key={index}>{bullet}</li>
-                  ))}
-                </ul>
-              </div>
+              {/* Use Bootstrap grid classes to create a two-column layout */}
+              <Row>
+                <Col lg={6} md={6} sm={12}>
+                  <div className="project-detail-image">
+                    <img src={more.detailImage1} alt={`Project Detail Image`} />
+                  </div>
+                </Col>
+                <Col lg={6} md={6} sm={12}>
+                  <div className="project-details">
+                    <ul>
+                      {more.bulletPoints1?.map((bullet, index) => (
+                        <li key={index}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </Col>
+              </Row>
             </section>
           </>
         )}
