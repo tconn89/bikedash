@@ -1,0 +1,164 @@
+/* Styles for the project page container */
+.project-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for the project title */
+.project-page header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Styles for the project description */
+.project-page header p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Styles for the project images section */
+.project-page .project-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+
+  position: relative; /* Add this to make positioning the overlays easier */
+}
+
+/* Styles for individual project images */
+.project-page .project-images img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+  position: relative; /* Add this to position overlays relative to images */
+}
+
+/* Styles for the project details section */
+.project-page .project-details h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Styles for the project details list */
+.project-page .project-details ul {
+  text-align: left;
+}
+
+/* Styles for individual project details items */
+.project-page .project-details li {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/* Styles for the more information section */
+.project-page .project-more-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Styles for the more information text */
+.project-page .project-more-info p {
+  font-size: 16px;
+  color: #777;
+}
+
+.project-page ul {
+  list-style: disc;
+}
+
+/* Image Overlay -----------------> */
+/* Styles for the image wrapper */
+.project-page .project-images .image-wrapper {
+  position: relative;
+}
+
+/* Styles for the image overlays */
+.project-page .project-images .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 2px solid #333;
+  border-radius: 5px;
+}
+
+.project-page .project-images .image-overlay:before {
+  content: attr(data-overlay-text);
+}
+
+.project-page .project-images .image-overlay[data-overlay-text="progress"] {
+  background-color: rgba(0, 128, 0, 0.6); /* Green overlay for "In Progress" */
+}
+
+.project-page .project-images .image-overlay[data-overlay-text="After"] {
+  background-color: rgba(0, 0, 128, 0.6); /* Blue overlay for "After" */
+}
+
+/*  Iteration 3 */
+
+/* Styles for the project container */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+/* Styles for the project details */
+.project-details {
+  flex-basis: 50%;
+  background-color: #f9f9f9; /* Light gray background */
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.project-details h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-details ul {
+  padding: 0;
+}
+
+.project-details li {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* Styles for the project detail image */
+.project-detail-image {
+  flex-basis: 50%;
+}
+
+.project-detail-image img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.project-detail-image h2 {
+  font-size: 24px;
+}
+
+.project-detail-image p {
+  font-size: 18px;
+  color: #777;
+}
+
+.spacer.x5 {
+  height: 50px;
+}

@@ -1,0 +1,38 @@
+.sticker {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-bottom: 20px solid rgba(0, 0, 255, 0.7);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: rotate(-45deg);
+  transform-origin: left bottom;
+  padding: 5px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.relative {
+  position: relative;
+}
+
+.ribbon {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+
+  inset: 0 auto auto 0;
+  background: #08769b;
+  transform-origin: 100% 0; /* or top left */
+  transform: translate(-29.3%) rotate(-45deg);
+  color: white;
+
+  box-shadow: 0 0 0 999px #08769b;
+  clip-path: inset(0 -100%);
+  z-index: 10;
+  font-size: 12px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

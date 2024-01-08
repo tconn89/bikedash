@@ -11,7 +11,7 @@ import ImageAfter from "assets/img/project3/decking-finished.jpg";
 import ImageDetail from "assets/img/project3/feature-aluminum-tubing.jpg";
 import ImageDetail1 from "assets/img/project3/angle-cut1.png";
 
-import "./project3.css";
+import "./project-base.css";
 
 export const AluminumDeckRail = () => {
   return (

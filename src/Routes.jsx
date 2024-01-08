@@ -3,6 +3,8 @@ import Strava from "./pages/Strava";
 import CoreValues from "./pages/coreValues";
 import { ContactTemporary } from "pages/contactTemporary";
 import { AluminumDeckRail } from "pages/projects/AluminumDeckRail";
+import { CoveredPorch } from "pages/projects/CoveredPorch";
+import { PrintableBrochure } from "pages/printableBrochure/PrintableBrochure";
 
 export const routes = [
   {
@@ -35,5 +37,15 @@ export const routes = [
     component: <AluminumDeckRail />,
     leftNav: false,
     path: "/decking-project-3",
+  },
+  {
+    component: <CoveredPorch />,
+    leftNav: false,
+    path: "/decking-project-6",
+  },
+  {
+    component: <PrintableBrochure />,
+    leftNav: false,
+    path: "/brochure-1",
   },
 ];

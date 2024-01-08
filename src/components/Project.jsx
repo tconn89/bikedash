@@ -1,12 +1,18 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap"; // Import Bootstrap grid components
 import ArticleFooter from "./ArticleFooter/ArticleFooter";
-
-const OverlayArray = ["Before", "During", "After"];
+import { ImageGallery } from "./ImageGallery/ImageGallery";
 
 export function Project(props) {
-  const { detailImage, images, projectName, projectDesc, bulletPoints, more } =
-    props;
+  const {
+    stickerType,
+    detailImage,
+    images,
+    projectName,
+    projectDesc,
+    bulletPoints,
+    more,
+  } = props;
 
   return (
     <>
@@ -16,19 +22,7 @@ export function Project(props) {
           <p>{projectDesc}</p>
         </header>
         <div className="spacer" />
-        <section className="project-images">
-          {/* Use Bootstrap grid classes to create a responsive grid */}
-          <Row>
-            {images.map((image, index) => (
-              <Col key={index} lg={4} md={4} sm={6} xs={12}>
-                <div className="image-wrapper">
-                  <img src={image} alt={`Project Image ${index}`} />
-                  <div className="image-overlay">{OverlayArray[index]}</div>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </section>
+        <ImageGallery images={images} stickerType={stickerType} />
         <section className="project-container">
           {/* Use Bootstrap grid classes to create a two-column layout */}
           <Row>
